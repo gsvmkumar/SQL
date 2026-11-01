@@ -1,0 +1,12 @@
+--Q131
+
+--Find products that have never been ordered using NOT EXISTS.
+
+SELECT p.product_id, p.product_name, p.price
+FROM products p
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM order_items oi
+    WHERE oi.product_id = p.product_id
+)
+ORDER BY p.product_id;
