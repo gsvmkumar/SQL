@@ -9,6 +9,8 @@ from customers c LEFT JOIN orders o
 on c.customer_id=o.customer_id
 order by c.first_name;
 
+--Display customer details and their orders, including customers who have
+--never placed an order whose name first_name is Divya.
 --version 2
 select c.first_name, count(o.order_id)
 from customers c LEFT JOIN orders o
